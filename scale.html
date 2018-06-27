@@ -37,6 +37,10 @@ event.preventDefault();
 }
 lastTouchEnd = now;
 }, false);
+      
+      
+WebSettings webSettings = webview.getSettings();
+webSettings.setSupportZoom(false);
   </script>
   
 </head>
