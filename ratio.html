@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>test</title>
+<style>
+@font-face {
+font-family: 'Nanum Gothic';
+font-style: normal;
+font-weight: 400;
+src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+      url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+      url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+      url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+}
+
+html, body, div {margin: 0; padding: 0;}
+body {
+  font-family: "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 125%;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    /* font-size: 93.8%; */
+    /* font-size: 62.5%; */
+  }
+  body {background: blue}
+}
+/*
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9) {
+  body {
+    border-left: .5rem solid red;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3) and (-webkit-max-device-pixel-ratio: 3.9) {
+  body {
+    border-right: .5rem solid blue;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 4) {
+  body {
+    border-bottom: .5rem solid pink;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 2dppx) {
+  body {
+    border-top: .5rem solid aqua;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  body {
+    border-top: .5rem solid greenyellow;
+  }
+}
+*/
+/* (max-device-width: 799px) */
+  .test-box {
+    font-size: 1rem;
+    width: 15rem;
+    height: 1rem;
+    background: gold;
+  }
+  .test-box2 {
+    font-size: 2rem;
+    width: 15rem;
+    height: 1rem;
+    background: pink;
+  }
+  .test-box3 {
+    font-size: 20px;
+    width: 300px;
+    height: 20px;
+    background: green;
+  }
+</style>
+<script>
+  //	Scott Jehl's viewport size function: https://gist.github.com/2051999
+  function viewportSize(){
+    var test = document.createElement( "div" );
+
+    test.style.cssText = "position: fixed;top: 0;left: 0;bottom: 0;right: 0;";
+    document.documentElement.insertBefore( test, document.documentElement.firstChild );
+
+    var dims = { width: test.offsetWidth, height: test.offsetHeight };
+    document.documentElement.removeChild( test );
+
+    return dims;
+  }
+  function loaded() {
+    setTimeout(function(){
+      var devicePixelRatio = window.devicePixelRatio;
+      document.getElementById('dpr').innerHTML = window.devicePixelRatio;
+      document.getElementById('wid').innerHTML = viewportSize().width;
+     // 
+      var box1 =window.getComputedStyle(document.getElementById('test-box'));
+      document.getElementById('test-box').innerHTML = box1.fontSize;
+      document.getElementById('test-box').innerHTML += ' , ';
+      document.getElementById('test-box').innerHTML += box1.width;
+    //
+      var box2 =window.getComputedStyle(document.getElementById('test-box2'));
+      document.getElementById('test-box2').innerHTML = box2.fontSize;
+      document.getElementById('test-box2').innerHTML += ' , ';
+      document.getElementById('test-box2').innerHTML += box2.width;
+
+      /*
+      if ( devicePixelRatio === 3 ) {
+        document.getElementsByTagName('html')[0].style.fontSize = "125%";
+      } else if ( devicePixelRatio === 2 ) {
+        document.getElementsByTagName('html')[0].style.fontSize = "93.8%";
+      }
+      */
+    }, 1000)
+  }
+</script>
+</head>
+<body onload="loaded();">
+  <div id="test-box" class="test-box">box</div>
+  <div id="test-box2" class="test-box2">box2</div>
+  <div class="test-box3">box3</div>
+  <p>Width = <span id="wid"></span>px</p>
+  <p>Pixel ratio = <span id="dpr"></span></p>
+</body>
+</html>
