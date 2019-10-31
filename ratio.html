@@ -27,7 +27,7 @@ body {
   box-sizing: border-box;
 }
 html {
-  font-size: 125%;
+  font-size: 62.5%; /* 125 */
 }
 @media screen and (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   html {
@@ -82,6 +82,9 @@ html {
     height: 20px;
     background: green;
   }
+      
+      dl {overflow: hidden; width: 100%}
+      dt {float: left}
 </style>
 <script>
   //	Scott Jehl's viewport size function: https://gist.github.com/2051999
@@ -102,8 +105,12 @@ html {
       document.getElementById('dpr').innerHTML = window.devicePixelRatio;
       document.getElementById('BwidthValue').innerHTML = viewportSize().width;
       document.getElementById('BheightValue').innerHTML = viewportSize().height;
-      document.getElementById('SwidthValue').innerHTML = screen.width;
-      document.getElementById('SheightValue').innerHTML = screen.height;
+              
+      document.getElementById('Slogical_widthValue').innerHTML = screen.width;
+      document.getElementById('Slogical_heightValue').innerHTML = screen.height;
+          
+      document.getElementById('Sphysical_widthValue').innerHTML = screen.width * window.devicePixelRatio;
+      document.getElementById('Sphysical_heightValue').innerHTML = screen.height * window.devicePixelRatio;
      // 
       var box1 =window.getComputedStyle(document.getElementById('test-box'));
       document.getElementById('test-box').innerHTML = box1.fontSize;
@@ -143,12 +150,18 @@ html {
   </dl>
   <hr />
   <dl>
-        <dt>Screen Width</dt>
-        <dd><span id="SwidthValue"></span>px</dd>
+        <dt>Screen Width (physical)</dt>
+        <dd><span id="Sphysical_widthValue"></span>px</dd>
+        
+        <dt>Screen Width (logical)</dt>
+        <dd><span id="Slogical_widthValue"></span>px</dd>
   </dl>
   <dl>
-        <dt>Screen Height</dt>
-        <dd><span id="SheightValue"></span>px</dd>
+        <dt>Screen Height (physical)</dt>
+        <dd><span id="Sphysical_heightValue"></span>px</dd>
+        
+        <dt>Screen Height (logical)</dt>
+        <dd><span id="Slogical_heightValue"></span>px</dd>
   </dl>
   <hr />
   <dl>
