@@ -83,8 +83,9 @@ html {
     background: green;
   }
       
-      dl {overflow: hidden; width: 100%}
-      dt {float: left}
+      dl {margin: 10px;}
+      dt {float: left; margin-right: 5px;margin-bottom: 5px;}
+      dd {margin-bottom: 5px;}
 </style>
 <script>
   //	Scott Jehl's viewport size function: https://gist.github.com/2051999
@@ -141,31 +142,31 @@ html {
   <hr /> 
 -->
   <dl>
-        <dt>Browser Width</dt>
+        <dt>Browser Width : </dt>
         <dd><span id="BwidthValue"></span>px</dd>
   </dl>
   <dl>
-        <dt>Browser Height</dt>
+        <dt>Browser Height : </dt>
         <dd><span id="BheightValue"></span>px</dd>
   </dl>
   <hr />
   <dl>
-        <dt>Screen Width (physical)</dt>
+        <dt>Screen Width (physical) : </dt>
         <dd><span id="Sphysical_widthValue"></span>px</dd>
         
-        <dt>Screen Width (logical)</dt>
+        <dt>Screen Width (logical) : </dt>
         <dd><span id="Slogical_widthValue"></span>px</dd>
   </dl>
   <dl>
-        <dt>Screen Height (physical)</dt>
+        <dt>Screen Height (physical) : </dt>
         <dd><span id="Sphysical_heightValue"></span>px</dd>
         
-        <dt>Screen Height (logical)</dt>
+        <dt>Screen Height (logical) : </dt>
         <dd><span id="Slogical_heightValue"></span>px</dd>
   </dl>
   <hr />
   <dl>
-        <dt>Pixel ratio</dt>
+        <dt>Pixel ratio : </dt>
         <dd id="dpr"></dd>
   </dl>
 </body>
