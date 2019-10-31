@@ -102,8 +102,8 @@ html {
       document.getElementById('dpr').innerHTML = window.devicePixelRatio;
       document.getElementById('BwidthValue').innerHTML = viewportSize().width;
       document.getElementById('BheightValue').innerHTML = viewportSize().height;
-      document.getElementById('SwidthValue').innerHTML = window.width;
-      document.getElementById('SheightValue').innerHTML = window.height;
+      document.getElementById('SwidthValue').innerHTML = screen.width;
+      document.getElementById('SheightValue').innerHTML = screen.height;
      // 
       var box1 =window.getComputedStyle(document.getElementById('test-box'));
       document.getElementById('test-box').innerHTML = box1.fontSize;
