@@ -100,8 +100,10 @@ html {
     setTimeout(function(){
       var devicePixelRatio = window.devicePixelRatio;
       document.getElementById('dpr').innerHTML = window.devicePixelRatio;
-      document.getElementById('widthValue').innerHTML = viewportSize().width;
-      document.getElementById('heightValue').innerHTML = viewportSize().height;
+      document.getElementById('BwidthValue').innerHTML = viewportSize().width;
+      document.getElementById('BheightValue').innerHTML = viewportSize().height;
+      document.getElementById('SwidthValue').innerHTML = window.width;
+      document.getElementById('SheightValue').innerHTML = window.height;
      // 
       var box1 =window.getComputedStyle(document.getElementById('test-box'));
       document.getElementById('test-box').innerHTML = box1.fontSize;
@@ -125,18 +127,33 @@ html {
 </script>
 </head>
 <body onload="loaded();">
-  <div id="test-box" class="test-box">box</div>
+<!--   
+<div id="test-box" class="test-box">box</div>
   <div id="test-box2" class="test-box2">box2</div>
   <div class="test-box3">box3</div>
-      <hr />
+  <hr /> 
+-->
   <dl>
-        <dt>Width</dt>
-        <dd><span id="widthValue"></span>px</dd>
+        <dt>Browser Width</dt>
+        <dd><span id="BwidthValue"></span>px</dd>
   </dl>
   <dl>
-        <dt>Height</dt>
-        <dd><span id="heightValue"></span>px</dd>
+        <dt>Browser Height</dt>
+        <dd><span id="BheightValue"></span>px</dd>
   </dl>
-  <p>Pixel ratio = <span id="dpr"></span></p>
+  <hr />
+  <dl>
+        <dt>Screen Width</dt>
+        <dd><span id="SwidthValue"></span>px</dd>
+  </dl>
+  <dl>
+        <dt>Screen Height</dt>
+        <dd><span id="SheightValue"></span>px</dd>
+  </dl>
+  <hr />
+  <dl>
+        <dt>Pixel ratio</dt>
+        <dd><span id="dpr"></span>px</dd>
+  </dl>
 </body>
 </html>
