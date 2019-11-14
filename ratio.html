@@ -87,55 +87,7 @@ html {
       dt {float: left; margin-right: 5px;margin-bottom: 5px;}
       dd {margin-bottom: 5px;}
 </style>
-<script>
-  //	Scott Jehl's viewport size function: https://gist.github.com/2051999
-  function viewportSize(){
-    var test = document.createElement( "div" );
 
-    test.style.cssText = "position: fixed;top: 0;left: 0;bottom: 0;right: 0;";
-    document.documentElement.insertBefore( test, document.documentElement.firstChild );
-
-    var dims = { width: test.offsetWidth, height: test.offsetHeight };
-    document.documentElement.removeChild( test );
-
-    return dims;
-  }
-  function loaded() {
-    setTimeout(function(){
-      var devicePixelRatio = window.devicePixelRatio;
-      document.getElementById('dpr').innerHTML = window.devicePixelRatio;
-      document.getElementById('BwidthValue').innerHTML = viewportSize().width;
-      document.getElementById('BheightValue').innerHTML = viewportSize().height;
-              
-      document.getElementById('Slogical_widthValue').innerHTML = screen.width;
-      document.getElementById('Slogical_heightValue').innerHTML = screen.height;
-          
-      document.getElementById('Sphysical_widthValue').innerHTML = screen.width * window.devicePixelRatio;
-      document.getElementById('Sphysical_heightValue').innerHTML = screen.height * window.devicePixelRatio;
-     // 
-      var box1 =window.getComputedStyle(document.getElementById('test-box'));
-      document.getElementById('test-box').innerHTML = box1.fontSize;
-      document.getElementById('test-box').innerHTML += ' , ';
-      document.getElementById('test-box').innerHTML += box1.width;
-    //
-      var box2 =window.getComputedStyle(document.getElementById('test-box2'));
-      document.getElementById('test-box2').innerHTML = box2.fontSize;
-      document.getElementById('test-box2').innerHTML += ' , ';
-      document.getElementById('test-box2').innerHTML += box2.width;
-          
-      var boxWidth =window.getComputedStyle(document.getElementById('boxWidth'));
-      document.getElementById('boxWidth').innerHTML += boxWidth.width;
-
-      /*
-      if ( devicePixelRatio === 3 ) {
-        document.getElementsByTagName('html')[0].style.fontSize = "125%";
-      } else if ( devicePixelRatio === 2 ) {
-        document.getElementsByTagName('html')[0].style.fontSize = "93.8%";
-      }
-      */
-    }, 1000)
-  }
-</script>
 </head>
 <body onload="loaded();">
 <!--   
@@ -182,5 +134,62 @@ html {
       
   <hr />
       <div id="boxWidth" style="width: 1919px; height: 10px; background: green;"></div>
+      
+      
+ <script>
+  //	Scott Jehl's viewport size function: https://gist.github.com/2051999
+  function viewportSize(){
+    var test = document.createElement( "div" );
+
+    test.style.cssText = "position: fixed;top: 0;left: 0;bottom: 0;right: 0;";
+    document.documentElement.insertBefore( test, document.documentElement.firstChild );
+
+    var dims = { width: test.offsetWidth, height: test.offsetHeight };
+    document.documentElement.removeChild( test );
+
+    return dims;
+  }
+  function loaded() {
+//     setTimeout(function(){
+      var devicePixelRatio = window.devicePixelRatio;
+      document.getElementById('dpr').innerHTML = window.devicePixelRatio;
+      document.getElementById('BwidthValue').innerHTML = viewportSize().width;
+      document.getElementById('BheightValue').innerHTML = viewportSize().height;
+              
+      document.getElementById('Slogical_widthValue').innerHTML = screen.width;
+      document.getElementById('Slogical_heightValue').innerHTML = screen.height;
+          
+      document.getElementById('Sphysical_widthValue').innerHTML = screen.width * window.devicePixelRatio;
+      document.getElementById('Sphysical_heightValue').innerHTML = screen.height * window.devicePixelRatio;
+        
+        
+     var boxWidth =window.getComputedStyle(document.getElementById('boxWidth'));
+     document.getElementById('boxWidth').innerHTML += boxWidth.width;
+        
+        
+        
+     // 
+      var box1 =window.getComputedStyle(document.getElementById('test-box'));
+      document.getElementById('test-box').innerHTML = box1.fontSize;
+      document.getElementById('test-box').innerHTML += ' , ';
+      document.getElementById('test-box').innerHTML += box1.width;
+    //
+      var box2 =window.getComputedStyle(document.getElementById('test-box2'));
+      document.getElementById('test-box2').innerHTML = box2.fontSize;
+      document.getElementById('test-box2').innerHTML += ' , ';
+      document.getElementById('test-box2').innerHTML += box2.width;
+          
+      
+
+      /*
+      if ( devicePixelRatio === 3 ) {
+        document.getElementsByTagName('html')[0].style.fontSize = "125%";
+      } else if ( devicePixelRatio === 2 ) {
+        document.getElementsByTagName('html')[0].style.fontSize = "93.8%";
+      }
+      */
+//     }, 1000)
+  }
+</script>
 </body>
 </html>
