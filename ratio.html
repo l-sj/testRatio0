@@ -122,6 +122,9 @@ html {
       document.getElementById('test-box2').innerHTML = box2.fontSize;
       document.getElementById('test-box2').innerHTML += ' , ';
       document.getElementById('test-box2').innerHTML += box2.width;
+          
+      var boxWidth =window.getComputedStyle(document.getElementById('boxWidth'));
+      document.getElementById('boxWidth').innerHTML += boxWidth.width;
 
       /*
       if ( devicePixelRatio === 3 ) {
@@ -178,6 +181,6 @@ html {
   </dl>
       
   <hr />
-      <div style="width: 1919px; height: 10px; background: green;"></div>
+      <div id="boxWidth" style="width: 1919px; height: 10px; background: green;"></div>
 </body>
 </html>
